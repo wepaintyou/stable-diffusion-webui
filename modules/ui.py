@@ -1593,7 +1593,8 @@ def create_ui():
         (train_interface, "Train", "ti"),
     ]
 
-    css = ""
+    with open(os.path.join(script_path, "style.css"), "r", encoding="utf8") as file:
+        css = file.read()
 
     for cssfile in modules.scripts.list_files_with_name("style.css"):
         if not os.path.isfile(cssfile):
